@@ -380,6 +380,16 @@
 </p>
 <hr>
 
+## Snippets for Builder BOT - Visual Studio Code
+
+<p>
+<a href="https://github.com/jorgechavarriaga/Snippets_Builder_Bot_VSC">Snippets for Builder BOT - Visual Studio Code</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/dmwujsiTKn8/0.jpg "Snippets for Builder Bot - VSC")](https://www.youtube.com/watch?v=dmwujsiTKn8 "Snippets for Builder Bot - VSC")
+
 ## Documentation
 
 Visit [builderbot](https://builderbot.vercel.app/) to view the full documentation.
