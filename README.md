@@ -420,6 +420,15 @@
 </p>
 <hr>
 
+## Send Sticker
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendSticker">Send Sticker</a>
+    <picture>
+      <img src="sendSticker/sendSticker.png" >
+    </picture>
+</p>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>

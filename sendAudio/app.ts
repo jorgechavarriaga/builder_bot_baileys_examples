@@ -8,7 +8,7 @@ const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example Test:`)
+    .addAnswer(`🙌 Example sendAudio:`)
     .addAction(
         async (ctx, { flowDynamic, gotoFlow, endFlow, fallBack, provider, state }) => {
             await provider.sendAudio(ctx.key.remoteJid, './src/z/test.mp3')
