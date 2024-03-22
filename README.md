@@ -380,6 +380,15 @@
 </p>
 <hr>
 
+## Send File
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendFile">Send File</a>
+    <picture>
+      <img src="sendFile/sendFile.png" >
+    </picture>
+</p>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>

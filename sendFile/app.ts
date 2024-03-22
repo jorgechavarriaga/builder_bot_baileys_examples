@@ -2,7 +2,7 @@ import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 import { config } from 'dotenv'
-import Test from './flows/test'
+import * as path from 'path'
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
@@ -10,21 +10,15 @@ const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(`Hi!`)
-    .addAnswer(
-        'Option 1\Option 2',
-        { capture: true },
-        async (ctx, { flowDynamic, gotoFlow, endFlow, fallBack, provider, state }) => {
-            const resp = ctx.body
-            switch (resp) {
-                case "1":
-                    return gotoFlow(Test)
-                case "2":
-                    return endFlow('End')
-                default:
-                    return fallBack('Wrong Option')
-            }
+    .addAction(
+        async (ctx, { provider, flowDynamic }) => {
+            await provider.sendFile(ctx.key.remoteJid, './src/sendFile/jpeg.jpeg')
+            await provider.sendFile(ctx.key.remoteJid, './src/sendFile/jpg.jpg')
+            await provider.sendFile(ctx.key.remoteJid, './src/sendFile/png.png')
+            await provider.sendFile(ctx.key.remoteJid, 'tsconfig.json')
         }
     )
+
 
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow])
