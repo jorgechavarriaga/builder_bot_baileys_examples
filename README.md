@@ -440,6 +440,18 @@
 </p>
 <hr>
 
+## Delete User Message
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/deleteUserMessge">Delete User Message</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/c0fQtjIYFVU/0.jpg "Delete User Message")](https://www.youtube.com/watch?v=c0fQtjIYFVU "Delete User Message")
+
+<hr>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>
