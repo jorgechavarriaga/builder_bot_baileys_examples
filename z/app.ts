@@ -2,21 +2,18 @@ import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 import { config } from 'dotenv'
-import * as path from 'path'
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`send Media Example:`)
+    .addAnswer(`🙌 Example Test:`)
     .addAction(
-        async (ctx, { provider, flowDynamic }) => {
-            await provider.sendMedia(ctx.key.remoteJid, 'https://www.chavazystem.tech/assets/images/EafitMechanicalEngineer.jpeg', 'Image URL from sendMedia')
-            await provider.sendMedia(ctx.key.remoteJid, './src/sendMedia/jpeg.jpeg', 'Image Local from sendMedia')
+        async (ctx, { flowDynamic, gotoFlow, endFlow, fallBack, provider, state }) => {
+            await provider.sendAudio(ctx.key.remoteJid, './src/z/test.mp3')
         }
     )
-
 
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow])
@@ -31,6 +28,7 @@ const main = async () => {
             database: adapterDB,
         }
     )
+
 
     httpServer(+PORT)
 

@@ -410,6 +410,16 @@
 </p>
 <hr>
 
+## Send Audio
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendAudio">Send Audio</a>
+    <picture>
+      <img src="sendAudio/sendAudio.png" >
+    </picture>
+</p>
+<hr>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>

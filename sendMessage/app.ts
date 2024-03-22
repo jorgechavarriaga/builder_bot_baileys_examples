@@ -9,7 +9,7 @@ const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`Hi!`)
+    .addAnswer(`sendMessage Example:`)
     .addAction(
         async (ctx, { provider, flowDynamic }) => {
             await provider.vendor.sendMessage(
