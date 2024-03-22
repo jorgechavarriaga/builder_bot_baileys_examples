@@ -16,11 +16,11 @@
   </a>
 </p>
 
-## Example: fallBack
+## Example: send Message
 
 <p align="left">
     <picture>
-      <img src="fallB.png" >
+      <img src="sendMessage.png" >
     </picture>
 </p>
 

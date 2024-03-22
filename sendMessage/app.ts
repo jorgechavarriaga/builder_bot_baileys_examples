@@ -12,18 +12,15 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(`Hi!`)
     .addAction(
         async (ctx, { provider, flowDynamic }) => {
-            const imagePath = 'https://www.chavazystem.tech/assets/images/EafitMechanicalEngineer.jpeg'
-            // const imagePath = './src/test/jpeg.jpeg'
-            // const imagePath = 'https://img.freepik.com/foto-gratis/aislado-feliz-sonriente-perro-fondo-blanco-retrato-4_1562-693.jpg'
-            // const imagePath = './src/test/jpg.jpg'
-            // const imagePath = 'https://builderbot.vercel.app/_next/static/media/logo-v2.5d15651a.png'
-            // const imagePath = './src/test/png.png'
-            await provider.sendFile(ctx.key.remoteJid, imagePath)
-            await provider.sendMedia(ctx.key.remoteJid, imagePath, 'Image from sendMedia')
             await provider.vendor.sendMessage(
                 ctx.key.remoteJid, {
-                image: { url: imagePath },
-                caption: `*Image from sendMessage*`
+                image: { url: 'https://www.chavazystem.tech/assets/images/EafitMechanicalEngineer.jpeg' },
+                caption: `*Image URL from sendMessage*`
+            })
+            await provider.vendor.sendMessage(
+                ctx.key.remoteJid, {
+                image: { url: './src/sendMessage/jpg.jpg' },
+                caption: `*Image Local from sendMessage*`
             })
         }
     )
