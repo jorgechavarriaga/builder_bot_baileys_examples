@@ -13,7 +13,7 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
         async (ctx, { provider }) => {
             await provider.sendSticker(
                 ctx.key.remoteJid,
-                './src/z/st1.webp',
+                './src/sendSticker/st1.webp',
                 {
                     pack: 'Personal', author: 'Jorge Chavarriaga'
                 })

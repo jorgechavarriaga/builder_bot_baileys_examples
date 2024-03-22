@@ -8,15 +8,14 @@ const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example sendSticker:`)
+    .addAnswer(`🙌 Example sendVideo:`)
     .addAction(
         async (ctx, { provider }) => {
-            await provider.sendSticker(
+            await provider.sendVideo(
                 ctx.key.remoteJid,
-                './src/z/st1.webp',
-                {
-                    pack: 'Personal', author: 'Jorge Chavarriaga'
-                })
+                './src/sendVideo/video.mp4',
+                'Local Video from sendVideo'
+            )
         }
     )
 

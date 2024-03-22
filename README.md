@@ -428,6 +428,17 @@
       <img src="sendSticker/sendSticker.png" >
     </picture>
 </p>
+<hr>
+
+## Send Video
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendVideo">Send Video</a>
+    <picture>
+      <img src="sendVideo/sendVideo.png" >
+    </picture>
+</p>
+<hr>
 
 ## Snippets for Builder BOT - Visual Studio Code
 

@@ -16,11 +16,11 @@
   </a>
 </p>
 
-## Example: fetch Status
+## Example: sendVideo
 
 <p align="left">
     <picture>
-      <img src="statusInfo.png" >
+      <img src="sendVideo.png" >
     </picture>
 </p>
 
