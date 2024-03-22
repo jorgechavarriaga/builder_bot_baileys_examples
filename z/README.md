@@ -16,7 +16,7 @@
   </a>
 </p>
 
-## Example: sendVideo
+## Example: Delete User Message
 
 <p align="left">
     <picture>

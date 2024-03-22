@@ -7,15 +7,40 @@ config()
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
+const badWords = ['fuck', 'ass hole', 'motherfucker']
+
+const waitT = (ms: number) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms)
+    })
+}
+
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example sendVideo:`)
+    .addAnswer(`🙌 Example Test:`)
     .addAction(
-        async (ctx, { provider }) => {
-            await provider.sendVideo(
-                ctx.key.remoteJid,
-                './src/sendVideo/video.mp4',
-                'Local Video from sendVideo'
-            )
+        async (ctx, { provider, flowDynamic, endFlow }) => {
+            const resp = ctx.body.toLocaleLowerCase()
+            const containsBadWord = badWords.some(word => resp.includes(word))
+            const id = ctx.key.id
+            const fromMe = ctx.key.fromMe
+            const timeStamp = ctx.messageTimestamp
+            if (containsBadWord) {
+                await flowDynamic('Your message is going to be deleted as you are sending inappropriate language.')
+                await waitT(3500)
+                try {
+                    await provider.vendor.chatModify(
+                        { clear: { messages: [{ id: id, fromMe: fromMe, timestamp: timeStamp }] } },
+                        ctx.key.remoteJid
+                    )
+                    await flowDynamic(`Message deleted successfully.`)
+                    return endFlow('Bye !!!')
+                } catch (error) {
+                    await flowDynamic(`Error: ${JSON.stringify(error, null, 3)}`)
+                }
+            }
+            await flowDynamic('Welcome!')
         }
     )
 
