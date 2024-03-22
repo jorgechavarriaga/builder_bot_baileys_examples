@@ -388,6 +388,17 @@
       <img src="sendFile/sendFile.png" >
     </picture>
 </p>
+<hr>
+
+## Send Media
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendMedia">Send Media</a>
+    <picture>
+      <img src="sendMedia/sendMedia.png" >
+    </picture>
+</p>
+<hr>
 
 ## Snippets for Builder BOT - Visual Studio Code
 
