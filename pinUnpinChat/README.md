@@ -16,11 +16,11 @@
   </a>
 </p>
 
-## Delete User Message
+## PIN/UNPIN User Chat
 
 ### Video 👇👇👇
 
-[![Alt Text](https://img.youtube.com/vi/c0fQtjIYFVU/0.jpg "Delete User Message")](https://www.youtube.com/watch?v=c0fQtjIYFVU "Delete User Message")
+[![Alt Text](https://img.youtube.com/vi/c0fQtjIYFVU/0.jpg "PIN/UNPIN USER CHAT")](https://www.youtube.com/watch?v=c0fQtjIYFVU "PIN/UNPIN USER CHAT")
 
 ## Documentation
 

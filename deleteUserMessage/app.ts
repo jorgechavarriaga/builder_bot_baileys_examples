@@ -18,9 +18,9 @@ const waitT = (ms: number) => {
 }
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example Test:`)
+    .addAnswer(`🙌 Example Delete User Message:`)
     .addAction(
-        async (ctx, { provider, flowDynamic, endFlow }) => {
+        async (ctx, { provider, flowDynamic }) => {
             const resp = ctx.body.toLocaleLowerCase()
             const containsBadWord = badWords.some(word => resp.includes(word))
             const id = ctx.key.id
@@ -35,7 +35,6 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
                         ctx.key.remoteJid
                     )
                     await flowDynamic(`Message deleted successfully.`)
-                    return endFlow('Bye !!!')
                 } catch (error) {
                     await flowDynamic(`Error: ${JSON.stringify(error, null, 3)}`)
                 }

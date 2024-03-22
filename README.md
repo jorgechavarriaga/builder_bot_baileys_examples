@@ -452,6 +452,18 @@
 
 <hr>
 
+## PIN/UNPIN User Chat
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/pinUnpinChat">Pin/Unpin user chat</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/TubgxlCzbYc/0.jpg "PIN/UNPIN USER CHAT")](https://www.youtube.com/watch?v=TubgxlCzbYc "PIN/UNPIN USER CHAT")
+
+<hr>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>
