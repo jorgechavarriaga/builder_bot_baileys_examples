@@ -464,6 +464,18 @@
 
 <hr>
 
+## Star/UnStart Message
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/starUnStarMessage">Start/UnStar message</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/y4E4kfgDaRA/0.jpg "Start/UnStar message")](https://www.youtube.com/watch?v=y4E4kfgDaRA "Start/UnStar message")
+
+<hr>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>
