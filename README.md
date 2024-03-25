@@ -476,6 +476,17 @@
 
 <hr>
 
+## Reject Call Video/Audio
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/rejectCall">Reject Call Video/Audio</a>
+</p>
+<hr>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/Vn--RUF_VqM/0.jpg "Reject Call Video/Audio")](https://www.youtube.com/watch?v=Vn--RUF_VqM "Reject Call Video/Audio")
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>

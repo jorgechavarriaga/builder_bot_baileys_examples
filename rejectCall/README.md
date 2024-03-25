@@ -16,7 +16,7 @@
   </a>
 </p>
 
-## Example: Delete User Message
+## Example: Reject Call Video/Audio
 
 <p align="left">
     <picture>

@@ -1,31 +1,37 @@
 import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
+import { is } from 'cheerio/lib/api/traversing'
 import { config } from 'dotenv'
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
-const waitT = (ms: number) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(ms);
-        }, ms)
-    })
-}
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example Start Message`)
+    .addAnswer('Example Reject Audio/Video Call')
     .addAction(
-        async (ctx, { provider, flowDynamic }) => {
-            const id = ctx.key.id
-            const fromMe = ctx.key.formMe
-            await provider.vendor.chatModify({ star: { messages: [{ id, fromMe }], star: true } }, ctx.key.remoteJid)
-            await flowDynamic('Star false after 10 seconds...')
-            await waitT(10000)
-            await provider.vendor.chatModify({ star: { messages: [{ id, fromMe }], star: false } }, ctx.key.remoteJid)
+        async (ctx, ctxFn) => {
+            const name = ctx.body
+            await ctxFn.state.update({ name: ctx.body })
+            let resolved = false
+            new Promise(resolve => {
+                ctxFn.provider.vendor.ev.process(
+                    async (events) => {
+                        if (events.call && !resolved) {
+                            const { id, chatId } = events.call[0]
+                            await ctxFn.provider.vendor.rejectCall(id, chatId)
+                            resolved = true
+                            await ctxFn.flowDynamic(`*${events.call[0].isVideo ? 'Video' : 'Audio'} calls* are not allowed.`)
+                        }
+                    }
+                )
+            })
         }
     )
+
+
+
 
 
 const main = async () => {
@@ -41,7 +47,6 @@ const main = async () => {
             database: adapterDB,
         }
     )
-
 
     httpServer(+PORT)
 
