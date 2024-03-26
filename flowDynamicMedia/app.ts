@@ -11,64 +11,69 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(`🙌 Example flowDynamic Media`)
     .addAction(
         async (ctx, { provider, flowDynamic }) => {
-            await provider.vendor.sendMessage(
-                ctx.key.remoteJid,
-                {
-                    document: {
-                        url: "https://edwardsib.org/ourpages/auto/2015/9/28/51403017/Cuentos%20Infantiles.pdf"
-                    },
-                    mimetype: 'application/pdf',
-                    fileName: 'myfile.pdf'
-                }
-            )
-            await flowDynamic([
-                {
-                    body: 'Image from URL',
-                    media: 'https://builderbot.vercel.app/_next/static/media/logo-v2.5d15651a.png'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'Video from URL',
-                    media: 'https://bot-whatsapp.netlify.app/videos/console.mp4'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'Excel file',
-                    media: './excel.xlsx'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'Word file',
-                    media: './word.docx'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'PDF file',
-                    media: './pdf.pdf'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'JSON file',
-                    media: './package.json'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'Log file',
-                    media: './baileys.log'
-                }
-            ])
-            await flowDynamic([
-                {
-                    body: 'MD file',
-                    media: 'README.md'
-                }
-            ])
+            await flowDynamic([{
+                body: "Cocina",
+                media: "https://res.cloudinary.com/dewilkinsrey/image/upload/pg_1/v1711473830/pdf/omtqdouguvkzzpsx3npy.jpg",
+                delay: 1,
+            }])
+            // await provider.vendor.sendMessage(
+            //     ctx.key.remoteJid,
+            //     {
+            //         document: {
+            //             url: "https://edwardsib.org/ourpages/auto/2015/9/28/51403017/Cuentos%20Infantiles.pdf"
+            //         },
+            //         mimetype: 'application/pdf',
+            //         fileName: 'myfile.pdf'
+            //     }
+            // )
+            // await flowDynamic([
+            //     {
+            //         body: 'Image from URL',
+            //         media: 'https://builderbot.vercel.app/_next/static/media/logo-v2.5d15651a.png'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'Video from URL',
+            //         media: 'https://bot-whatsapp.netlify.app/videos/console.mp4'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'Excel file',
+            //         media: './excel.xlsx'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'Word file',
+            //         media: './word.docx'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'PDF file',
+            //         media: './pdf.pdf'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'JSON file',
+            //         media: './package.json'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'Log file',
+            //         media: './baileys.log'
+            //     }
+            // ])
+            // await flowDynamic([
+            //     {
+            //         body: 'MD file',
+            //         media: 'README.md'
+            //     }
+            // ])
         }
     )
 

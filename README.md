@@ -481,11 +481,24 @@
 <p>
 <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/rejectCall">Reject Call Video/Audio</a>
 </p>
-<hr>
 
 ### Video 👇👇👇
 
 [![Alt Text](https://img.youtube.com/vi/Vn--RUF_VqM/0.jpg "Reject Call Video/Audio")](https://www.youtube.com/watch?v=Vn--RUF_VqM "Reject Call Video/Audio")
+
+<hr>
+
+## endpoint With AuthMiddleware
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/endpointWithAuthMiddleware">endpoint With AuthMiddleware</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/OS2N6ZJP46E/0.jpg "endpoint With AuthMiddleware")](https://www.youtube.com/watch?v=OS2N6ZJP46E "endpoint With AuthMiddleware")
+
+<hr>
 
 ## Snippets for Builder BOT - Visual Studio Code
 
