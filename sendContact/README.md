@@ -16,11 +16,11 @@
   </a>
 </p>
 
-## Example: Users Blocked on BOT
+## Example: sendContact
 
 <p align="left">
     <picture>
-      <img src="blocked.png" >
+      <img src="sendContact.png" >
     </picture>
 </p>
 

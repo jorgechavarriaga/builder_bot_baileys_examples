@@ -7,35 +7,20 @@ config()
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
-
-const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example Test`)
+const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME).addAnswer(`🙌 Example sendContact`)
     .addAction(
         async (ctx, { provider }) => {
-            await provider.vendor.sendMessage(ctx.key.remoteJid, { text: 'Hi Juancho!!' })
-        }
-    );
-
-
-
-
-const main = async () => {
-    const adapterFlow = createFlow([welcomeFlow])
-
-    const adapterProvider = createProvider(Provider, { usePairingCode: true, phoneNumber: PHONE_NUMBER })
-    const adapterDB = new Database()
-
-    const { handleCtx, httpServer } = await createBot(
-        {
-            flow: adapterFlow,
-            provider: adapterProvider,
-            database: adapterDB,
+            await provider.sendContact(ctx.key.remoteJid, '+14183211335', 'Jorge Ch')
         }
     )
 
+const main = async () => {
+    const adapterFlow = createFlow([welcomeFlow])
+    const adapterProvider = createProvider(Provider, { name: 'My SUPER BOT', port: 3333, usePairingCode: true, phoneNumber: PHONE_NUMBER })
+    const adapterDB = new Database()
+    const { handleCtx, httpServer } = await createBot({ flow: adapterFlow, provider: adapterProvider, database: adapterDB })
 
     httpServer(+PORT)
-
     adapterProvider.http.server.post(
         '/v1/messages',
         handleCtx(async (bot, req, res) => {

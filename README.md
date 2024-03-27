@@ -380,6 +380,17 @@
 </p>
 <hr>
 
+## sendContact
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendContact">send Contact</a>
+    <picture>
+      <img src="sendContact/sendContact.png" >
+    </picture>
+</p>
+
+<hr>
+
 ## Send File
 
 <p align="left">
