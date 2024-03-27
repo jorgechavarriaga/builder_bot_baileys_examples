@@ -16,14 +16,11 @@
   </a>
 </p>
 
-## Example: send Message
+## Example: Users Blocked on BOT
 
 <p align="left">
     <picture>
-      <img src="sendMessage.png" >
-    </picture>
-        <picture>
-      <img src="msgViaAd.jpeg" >
+      <img src="blocked.png" >
     </picture>
 </p>
 

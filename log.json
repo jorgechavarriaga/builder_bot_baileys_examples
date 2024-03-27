@@ -1,0 +1,157 @@
+
+[
+     {},
+     null,
+     {
+          "120363220990301765@g.us": {
+               "participant": [],
+               "id": "120363220990301765@g.us",
+               "unreadCount": 1,
+               "readOnly": false,
+               "ephemeralExpiration": 0,
+               "conversationTimestamp": 1711132434,
+               "name": "My Test Grouo",
+               "pHash": "1:6pVka18w",
+               "notSpam": true,
+               "unreadMentionCount": 0,
+               "suspended": false,
+               "isDefaultSubgroup": false,
+               "commentsCount": 1000000,
+               "messages": [
+                    {
+                         "message": {
+                              "key": {
+                                   "remoteJid": "120363220990301765@g.us",
+                                   "fromMe": true,
+                                   "id": "1043220441"
+                              },
+                              "messageTimestamp": "1709821880",
+                              "messageStubType": "GROUP_PARTICIPANT_PROMOTE",
+                              "messageStubParameters": [
+                                   "14507006827@s.whatsapp.net"
+                              ]
+                         }
+                    }
+               ]
+          },
+          "120363265506082348@g.us": {
+               "id": "120363265506082348@g.us",
+               "name": "Test Group",
+               "conversationTimestamp": 1710953308,
+               "unreadCount": 2
+          },
+          "14507006827@s.whatsapp.net": {
+               "id": "14507006827@s.whatsapp.net",
+               "conversationTimestamp": 1710797932,
+               "unreadCount": 1,
+               "tcToken": {
+                    "type": "Buffer",
+                    "data": [
+                         2,
+                         101,
+                         17,
+                         211,
+                         237,
+                         58,
+                         154,
+                         101,
+                         153,
+                         106,
+                         105,
+                         6,
+                         31,
+                         249,
+                         161,
+                         226,
+                         83,
+                         1,
+                         145,
+                         242,
+                         24,
+                         85,
+                         130,
+                         39,
+                         199,
+                         220,
+                         122,
+                         163,
+                         202,
+                         4,
+                         109,
+                         0,
+                         223,
+                         52,
+                         234,
+                         224,
+                         78,
+                         99,
+                         93,
+                         21,
+                         217,
+                         138,
+                         198,
+                         255,
+                         218,
+                         212,
+                         124,
+                         218,
+                         23,
+                         79,
+                         134
+                    ]
+               }
+          },
+          "593997030373@s.whatsapp.net": {
+               "participant": [],
+               "id": "593997030373@s.whatsapp.net",
+               "messages": [
+                    {
+                         "message": {
+                              "key": {
+                                   "remoteJid": "593997030373@s.whatsapp.net",
+                                   "fromMe": true,
+                                   "id": "FD4C969F66A9503995F7086AA2A31CD7"
+                              },
+                              "messageTimestamp": "1707155110",
+                              "messageStubType": "E2E_ENCRYPTED"
+                         }
+                    }
+               ]
+          },
+          "584123018128@s.whatsapp.net": {
+               "participant": [],
+               "id": "584123018128@s.whatsapp.net",
+               "messages": [
+                    {
+                         "message": {
+                              "key": {
+                                   "remoteJid": "584123018128@s.whatsapp.net",
+                                   "fromMe": true,
+                                   "id": "0171F6C23CA05EA5D060B14E8BDD1239"
+                              },
+                              "messageTimestamp": "1707155109",
+                              "messageStubType": "E2E_ENCRYPTED"
+                         }
+                    }
+               ]
+          },
+          "573508310204@s.whatsapp.net": {
+               "participant": [],
+               "id": "573508310204@s.whatsapp.net",
+               "messages": [
+                    {
+                         "message": {
+                              "key": {
+                                   "remoteJid": "573508310204@s.whatsapp.net",
+                                   "fromMe": true,
+                                   "id": "E5658446CB8404FF925E04FB2D1265D0"
+                              },
+                              "messageTimestamp": "1707155111",
+                              "messageStubType": "E2E_ENCRYPTED"
+                         }
+                    }
+               ]
+          }
+     ][32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `tsx ./src/z/app.ts`[39m
+[bailey]: GET http://localhost:3008

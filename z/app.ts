@@ -2,47 +2,21 @@ import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 import { config } from 'dotenv'
-import * as path from 'path'
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
 
+
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`sendMessage Example:`)
+    .addAnswer(`🙌 Example Test`)
     .addAction(
         async (ctx, { provider }) => {
-            await provider.vendor.sendMessage(ctx.key.remoteJid, { text: 'Text Message! ' })
-            await provider.vendor.sendMessage(
-                ctx.key.remoteJid,
-                {
-                    text: 'Message via ad',
-                    contextInfo: {
-                        externalAdReply: {
-                            title: 'Catalog',
-                            body: 'Akerele',
-                            mediaType: 1, // COMMENTS: 0 None, 1 Image, 2 Video
-                            showAdAttribution: false, // COMMENTS: 'Message via ad' 
-                            renderLargerThumbnail: false,
-                            mediaUrl: 'http://www.akelare.com/cdn/shop/files/agua-micelar-rosas-y-pepino_25beb8d9-325c-46c4-a32a-3ecb16a37c5f_1200x1200.jpg',
-                            thumbnailUrl: 'http://www.akelare.com/cdn/shop/files/agua-micelar-rosas-y-pepino_25beb8d9-325c-46c4-a32a-3ecb16a37c5f_1200x1200.jpg',
-                            sourceUrl: 'https://wa.me/c/573043688441',
-                        }
-                    }
-
-                })
-            await provider.vendor.sendMessage(
-                ctx.key.remoteJid, {
-                image: { url: 'https://www.chavazystem.tech/assets/images/EafitMechanicalEngineer.jpeg' },
-                caption: `*Image URL from sendMessage*`
-            })
-            await provider.vendor.sendMessage(
-                ctx.key.remoteJid, {
-                image: { url: './src/sendMessage/jpg.jpg' },
-                caption: `*Image Local from sendMessage*`
-            })
+            await provider.vendor.sendMessage(ctx.key.remoteJid, { text: 'Hi Juancho!!' })
         }
-    )
+    );
+
+
 
 
 const main = async () => {
@@ -58,6 +32,7 @@ const main = async () => {
             database: adapterDB,
         }
     )
+
 
     httpServer(+PORT)
 

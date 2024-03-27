@@ -407,6 +407,10 @@
     <picture>
       <img src="sendMessage/sendMessage.png" >
     </picture>
+    <picture>
+      <img src="sendMessage/msgViaAd.jpeg" >
+    </picture>
+    
 </p>
 <hr>
 
