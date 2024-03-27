@@ -16,17 +16,12 @@
   </a>
 </p>
 
-## Example: sendContact
+## Example: sendImage
 
 <p align="left">
     <picture>
-      <img src="sendContact.png" >
+      <img src="sendImage.png" >
     </picture>
-    <p><strong>File:</strong></p>
-    <p>/base-ts-baileys-memory/node_modules/@builderbot/provider-baileys/dist/index.cjs</p>
-    <p>Change line:</p>
-    <p><b>'ORG:Ashoka Uni;\n'</b> + for  `ORG:${displayName}\n` +</p>
-    </p>
 </p>
 
 ## Documentation

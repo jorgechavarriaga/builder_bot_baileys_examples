@@ -416,6 +416,17 @@
 </p>
 <hr>
 
+## Send Image
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/sendImage">Send Image</a>
+    <picture>
+      <img src="sendImage/sendImage.png" >
+    </picture>
+</p>
+
+<hr>
+
 ## Send Message
 
 <p align="left">
