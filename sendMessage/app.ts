@@ -20,7 +20,7 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
                     contextInfo: {
                         externalAdReply: {
                             title: 'Catalog',
-                            body: 'Akerele',
+                            body: 'Akerale',
                             mediaType: 1, // COMMENTS: 0 None, 1 Image, 2 Video
                             showAdAttribution: false, // COMMENTS: 'Message via ad' 
                             renderLargerThumbnail: false,
