@@ -505,7 +505,7 @@
 <p align="left">
   <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/state">State</a>
   <picture>
-      <img src="state.png" >
+      <img src="state/state.png" >
     </picture>
 </p>
 
