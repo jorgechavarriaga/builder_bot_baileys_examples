@@ -500,6 +500,15 @@
 
 <hr>
 
+## Example: state
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/state">State</a>
+  <picture>
+      <img src="state.png" >
+    </picture>
+</p>
+
 ## Snippets for Builder BOT - Visual Studio Code
 
 <p>
