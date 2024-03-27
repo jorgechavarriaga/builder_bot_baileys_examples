@@ -387,6 +387,11 @@
     <picture>
       <img src="sendContact/sendContact.png" >
     </picture>
+    <p><strong>File:</strong></p>
+    <p>/base-ts-baileys-memory/node_modules/@builderbot/provider-baileys/dist/index.cjs</p>
+    <p>Change line:</p>
+    <p><b>'ORG:Ashoka Uni;\n'</b> + for  `ORG:${displayName}\n` +</p>
+    </p>
 </p>
 
 <hr>
