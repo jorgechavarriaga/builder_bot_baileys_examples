@@ -531,7 +531,7 @@
 
 <hr>
 
-## Example: state
+## state
 
 <p align="left">
   <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/state">State</a>
@@ -539,6 +539,16 @@
       <img src="state/state.png" >
     </picture>
 </p>
+
+## idle
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/idleCasero">Idle</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/Js2Pg_MbEpg/0.jpg "Idle")](https://www.youtube.com/watch?v=Js2Pg_MbEpg "Idle")
 
 ## Snippets for Builder BOT - Visual Studio Code
 
