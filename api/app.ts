@@ -1,7 +1,7 @@
 import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
-import { joke } from './api'
+import { generate_joke } from './api'
 import { config } from 'dotenv'
 config()
 
@@ -16,9 +16,17 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
         '*Here\'s a joke:*',
         null,
         async (ctx, { flowDynamic }) => {
-            const Joke = await joke()
-            await flowDynamic(Joke.setup)
-            await flowDynamic(Joke.delivery, { delay: 5000 })
+            const { joke, delivery, error, message } = await generate_joke()
+            if (!error) {
+                if (delivery) {
+                    await flowDynamic(joke)
+                    await flowDynamic(delivery, { delay: 5000 })
+                } else {
+                    await flowDynamic(joke)
+                }
+            } else {
+                await flowDynamic(`Error: ${message}`)
+            }
         }
     )
 
