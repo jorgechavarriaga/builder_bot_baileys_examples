@@ -1,7 +1,7 @@
 import { createBot, createProvider, createFlow, addKeyword, EVENTS } from '@builderbot/bot'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
-import { generate_joke } from './api'
+import { generate_joke } from './services/get_joke'
 import { config } from 'dotenv'
 config()
 
