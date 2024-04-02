@@ -29,6 +29,7 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
 
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow])
+
     const adapterProvider = createProvider(Provider, { usePairingCode: true, phoneNumber: PHONE_NUMBER })
     const adapterDB = new Database()
     const botResult = await createBot(
