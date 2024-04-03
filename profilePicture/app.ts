@@ -10,17 +10,16 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(`💡 Example *profile Picture*`)
     .addAnswer(
         'Enter number to check image profile: ', { capture: true },
-        async (ctx, { provider, flowDynamic, fallBack, endFlow }) => {
+        async (ctx, { provider, flowDynamic, fallBack }) => {
             const check = ctx.body + '@s.whatsapp.net'
             try {
                 const imageProfile = await provider.vendor.profilePictureUrl(check.replace(/\+/g, ''), 'image', 10000)
                 await flowDynamic([
                     {
-                        body: '*Profile Picture:*',
+                        body: `*${check} Profile Picture* 👆🏻👆🏻👆🏻 `,
                         media: imageProfile
                     }
                 ])
-                return endFlow('End.')
             } catch (error) {
                 await flowDynamic(`Error: ${error.message}`)
                 return fallBack('Try it again.')
