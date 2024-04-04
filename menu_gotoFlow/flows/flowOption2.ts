@@ -3,7 +3,6 @@ import welcomeFlow from './welcomeFlow'
 import option1 from './flowOption1'
 import moment from 'moment'
 
-
 const now = moment().format('HH:MM:ss')
 
 const option2 = addKeyword(EVENTS.ACTION)
