@@ -13,6 +13,7 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAction(
         async (ctx, { provider }) => {
             await provider.sendImage(ctx.key.remoteJid, `${path.resolve()}/src/sendImage/jpg.jpg`, 'Cute cat!')
+            await provider.sendImage(ctx.key.remoteJid, './src/sendMedia/jpeg.jpeg', null)
         }
     )
 
