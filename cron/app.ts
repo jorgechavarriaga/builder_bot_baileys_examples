@@ -1,52 +1,35 @@
-import { createBot, createProvider, createFlow, addKeyword, utils, EVENTS } from '@builderbot/bot'
-import { MemoryDB as Database } from '@builderbot/bot'
+import { createBot, createProvider, createFlow, addKeyword, EVENTS } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
+import { MemoryDB as Database } from '@builderbot/bot'
+import { startCronJob } from './cron'
 import { config } from 'dotenv'
+import { pingIP } from './ping'
+startCronJob()
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 const PORT = process.env.PORT ?? 3008
-
-const wait = (ms: number) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(ms)
-        }, ms)
-    })
-}
+const serversStr = process.env.SERVERS
+const servers = JSON.parse(serversStr)
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
-    .addAnswer(`🙌 Example reaction`)
-    .addAnswer(
-        'What\'s your name ?',
-        { capture: true },
-        async (ctx, { provider, flowDynamic }) => {
-            const name = ctx.body
-            const number = ctx.key.remoteJid
-            await flowDynamic(`Hi ${name}, nice to meet you!`)
-            await wait(3000)
-            await provider.vendor.sendMessage(number, { react: { text: '💯', key: ctx.key } })
-            // await provider.vendor.chatModify({
-            //     addChatLabel: {
-            //         labelId: '9'
-            //     }
-            // }, ctx.key.remoteJid)
-            await provider.vendor.chatModify({
-                addMessageLabel: {
-                    labelId: '9',
-                    messageId: 'Jorge'
+    .addAction(
+        async (_, { flowDynamic }) => {
+            await flowDynamic('Checking Status of LuckyBrand servers ⌛️')
+            for (const server of servers) {
+                const [name, ip] = Object.entries(server)[0]
+                if (typeof ip === 'string') {
+                    const resp = await pingIP(ip)
+                    await flowDynamic(`*Server:* ${name} ${resp ? '✅' : '❌'}\n*IP:* ${ip}\n*Status:* ${resp ? '*Up* ⬆️' : '*Down* ⬇️'}\n`)
                 }
-            }, ctx.key.remoteJid)
-            await provider.vendor.chatModify({ clear: 'all' }, ctx.key.remoteJid)
+            }
         }
     )
 
 const main = async () => {
     const adapterFlow = createFlow([welcomeFlow])
-
     const adapterProvider = createProvider(Provider, { usePairingCode: true, phoneNumber: PHONE_NUMBER })
     const adapterDB = new Database()
-
     const { handleCtx, httpServer } = await createBot(
         {
             flow: adapterFlow,
@@ -54,7 +37,6 @@ const main = async () => {
             database: adapterDB,
         }
     )
-
 
     httpServer(+PORT)
 
@@ -82,7 +64,6 @@ const main = async () => {
             const { number, intent } = req.body
             if (intent === 'remove') bot.blacklist.remove(number)
             if (intent === 'add') bot.blacklist.add(number)
-
             res.writeHead(200, { 'Content-Type': 'application/json' })
             return res.end(JSON.stringify({ status: 'ok', number, intent }))
         })
