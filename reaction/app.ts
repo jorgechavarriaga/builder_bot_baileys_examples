@@ -26,18 +26,6 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
             await flowDynamic(`Hi ${name}, nice to meet you!`)
             await wait(3000)
             await provider.vendor.sendMessage(number, { react: { text: '💯', key: ctx.key } })
-            // await provider.vendor.chatModify({
-            //     addChatLabel: {
-            //         labelId: '9'
-            //     }
-            // }, ctx.key.remoteJid)
-            await provider.vendor.chatModify({
-                addMessageLabel: {
-                    labelId: '9',
-                    messageId: 'Jorge'
-                }
-            }, ctx.key.remoteJid)
-            await provider.vendor.chatModify({ clear: 'all' }, ctx.key.remoteJid)
         }
     )
 
