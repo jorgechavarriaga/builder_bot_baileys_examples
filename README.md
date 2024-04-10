@@ -500,6 +500,30 @@
 </p>
 <hr>
 
+## viewOnce
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/viewOnce">View Once</a>
+  <p>Sending image</p>
+    <picture>
+      <img src="viewOnce/viewOnce1.jpeg" >
+    </picture>
+  <p>Image received</p>
+    <picture>
+      <img src="viewOnce/viewOnce2.jpeg" >
+    </picture>
+  <p>Image opened and click on View Once icon</p>
+    <picture>
+      <img src="viewOnce/viewOnce3.jpeg" >
+    </picture>
+  <p>Image opened</p>
+    <picture>
+      <img src="viewOnce/viewOnce4.jpeg" >
+    </picture>
+</p>
+
+<hr>
+
 ## Send Video
 
 <p align="left">
