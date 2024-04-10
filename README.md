@@ -266,6 +266,16 @@
     </picture>
 </p>
 
+## Chat Label
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/chatLabel">Chat Label</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/3_XNvfpf_hE/0.jpg)](https://www.youtube.com/watch?v=3_XNvfpf_hE)
+
 ## Menu with GotoFlow
 
 <p>
