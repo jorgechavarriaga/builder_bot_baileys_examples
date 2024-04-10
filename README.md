@@ -276,6 +276,16 @@
 
 [![Alt Text](https://img.youtube.com/vi/3_XNvfpf_hE/0.jpg)](https://www.youtube.com/watch?v=3_XNvfpf_hE)
 
+## Archive Chat
+
+<p>
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/archive">Archive Chat</a>
+</p>
+
+### Video 👇👇👇
+
+[![Alt Text](https://img.youtube.com/vi/Tqre6Y3W5-0/0.jpg)](https://www.youtube.com/watch?v=Tqre6Y3W5-0)
+
 ## Menu with GotoFlow
 
 <p>
