@@ -66,6 +66,25 @@
 </p>
 <hr>
 
+## Cron
+
+<a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/cron">Cron</a>
+
+<p>Once the app has started, first message is sent, and the cron start every 5 minutes.</p>
+<p align="left">
+    <picture>
+      <img src="cron/cron1.png" >
+    </picture>
+</p>
+
+<p>Then, first call from the cron is called.</p>
+<p align="left">
+    <picture>
+      <img src="cron/cron2.png" >
+    </picture>
+</p>
+<hr>
+
 ## Contacts from BOT
 
 <p align="left">

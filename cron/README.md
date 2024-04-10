@@ -18,6 +18,20 @@
 
 ## Example: Cron
 
+<p>Once the app has started, first message is sent, and the cron start every 5 minutes.</p>
+<p align="left">
+    <picture>
+      <img src="cron1.png" >
+    </picture>
+</p>
+
+<p>Then, first call from the cron is called.</p>
+<p align="left">
+    <picture>
+      <img src="cron2.png" >
+    </picture>
+</p>
+
 ## Documentation
 
 Visit [builderbot](https://builderbot.vercel.app/) to view the full documentation.
