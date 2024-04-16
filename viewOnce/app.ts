@@ -11,14 +11,16 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(
         `💡 Example View Once`, null,
         async (ctx, { provider, }) => {
-            await provider.vendor.sendMessage(
+            const msg = await provider.vendor.sendMessage(
                 ctx.key.remoteJid,
                 {
-                    image: { url: 'https://i.imgur.com/0HpzsEm.png' },
-                    caption: `*Image URL from sendMessage*`,
+                    image: { url: 'https://cdn.anime-planet.com/manga/primary/sexy-soldiers-1.jpg' },
+                    caption: `*Sexy soldiers*`,
                     viewOnce: true,
                 }
             )
+            await provider.vendor.sendMessage(ctx.key.remoteJid, { text: 'This message is quoted' }, { quoted: msg })
+            console.log(msg)
         }
     )
 
