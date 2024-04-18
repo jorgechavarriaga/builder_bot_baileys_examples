@@ -2,9 +2,32 @@ import { createBot, createProvider, createFlow, addKeyword, EVENTS } from '@buil
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 import { MemoryDB as Database } from '@builderbot/bot'
 import { config } from 'dotenv'
+import * as https from 'https';
+import * as fs from 'fs'
 config()
 
 const PHONE_NUMBER = process.env.PHONE_NUMBER
+
+async function downloadImage(imageUrl: string, localFilePath: string): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+        https.get(imageUrl, (response) => {
+            if (response.statusCode !== 200) {
+                reject(`Error downloading the image. Status Code: ${response.statusCode}`)
+                return
+            }
+            const fileStream = fs.createWriteStream(localFilePath)
+            response.on('data', (chunk) => {
+                fileStream.write(chunk)
+            })
+            response.on('end', () => {
+                fileStream.end()
+                resolve('downloaded successfully!')
+            })
+        }).on('error', (error) => {
+            reject(`Error downloading image: ${error.message}`)
+        })
+    })
+}
 
 const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
     .addAnswer(`💡 Example *profile Picture*`)
@@ -20,6 +43,13 @@ const welcomeFlow = addKeyword<Provider, Database>(EVENTS.WELCOME)
                         media: imageProfile
                     }
                 ])
+                const localFilePath = `./src/profilePicture/${ctx.body}.jpg`
+                try {
+                    const result = await downloadImage(imageProfile, localFilePath);
+                    await flowDynamic(`Image ${ctx.body}.jpg ${result}`)
+                } catch (error) {
+                    await flowDynamic(`Error: ${error}`)
+                }
             } catch (error) {
                 await flowDynamic(`Error: ${error.message}`)
                 return fallBack('Try it again.')
