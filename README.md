@@ -257,6 +257,16 @@
 </p>
 <hr>
 
+## Mark Message Read
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/markMessageRead">Mark Message Read</a>
+    <picture>
+      <img src="markMessageRead/markAsRead.png" >
+    </picture>
+</p>
+<hr>
+
 ## Mention User
 
 <p align="left">
