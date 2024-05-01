@@ -3,6 +3,7 @@ import { createBot, createProvider, createFlow, addKeyword, utils } from '@build
 import { MemoryDB as Database } from '@builderbot/bot'
 import { BaileysProvider as Provider } from '@builderbot/provider-baileys'
 
+
 const PORT = process.env.PORT ?? 3008
 const PHONE_NUMBER = process.env.PHONE_NUMBER
 
@@ -77,16 +78,17 @@ const main = async () => {
 
     httpServer(+PORT)
 
-    adapterProvider.http.server.post(
+    adapterProvider.server.post(
         '/v1/messages',
         handleCtx(async (bot, req, res) => {
+            console.log(`Api called at ${new Date()}`)
             const { number, message, urlMedia } = req.body
             await bot.sendMessage(number, message, { media: urlMedia ?? null })
-            return res.end('sended')
+            return res.end(`Message sent successfully at ${new Date()}`)
         })
     )
 
-    adapterProvider.http.server.post(
+    adapterProvider.server.post(
         '/v1/register',
         handleCtx(async (bot, req, res) => {
             const { number, name } = req.body
@@ -95,7 +97,7 @@ const main = async () => {
         })
     )
 
-    adapterProvider.http.server.post(
+    adapterProvider.server.post(
         '/v1/blacklist',
         handleCtx(async (bot, req, res) => {
             const { number, intent } = req.body

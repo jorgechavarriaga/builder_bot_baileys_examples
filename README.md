@@ -96,6 +96,16 @@
 </p>
 <hr>
 
+## Disappearing Messages In Chat
+
+<p align="left">
+  <a href="https://github.com/jorgechavarriaga/builder_bot_baileys_examples/tree/master/disappearingMessagesInChat">Disappearing Messages In Chat</a>
+    <picture>
+      <img src="disappearingMessagesInChat/disappearingMessagesInChat.png" >
+    </picture>
+</p>
+<hr>
+
 ## Delete message
 
 <p align="left">
